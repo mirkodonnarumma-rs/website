@@ -1,0 +1,25 @@
+---
+// src/layouts/Layout.astro
+const { title = "Portfolio" } = Astro.props;
+import "../styles/global.css";
+---
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
+    <!-- Font Google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind e CSS globali -->
+    <!-- <link rel="stylesheet" href="/src/styles/global.css"> -->
+  </head>
+
+  <body class="font-sans text-gray-900 bg-white">
+    <slot />
+  </body>
+</html>
