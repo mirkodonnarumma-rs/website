@@ -1,0 +1,25 @@
+---
+const links = [
+  { href: "/", label: "Chi sono" },
+  { href: "/novasphere", label: "NovaSphere" },
+  { href: "/contact", label: "Contattami" },
+];
+---
+<header class="flex justify-between items-center py-4 px-6 border-b border-gray-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+  <!-- Logo o Nome -->
+  <a href="/" class="text-xl font-semibold tracking-tight text-gray-800 hover:text-gray-900">
+    LOGO QUI
+  </a>
+
+  <!-- Navigazione -->
+  <nav class="flex gap-6">
+    {links.map(link => (
+      <a
+        href={link.href}
+        class="text-gray-700 hover:text-gray-900 transition-colors duration-150"
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</header>
