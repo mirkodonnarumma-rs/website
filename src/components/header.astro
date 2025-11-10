@@ -1,25 +1,41 @@
 ---
-const links = [
-  { href: "/", label: "Chi sono" },
-  { href: "/novasphere", label: "NovaSphere" },
-  { href: "/contact", label: "Contattami" },
+type Lang = 'it' | 'en';
+const props = Astro.props as { lang?: Lang };
+const lang: Lang = props.lang ?? 'it';
+
+const links: {
+  href: string;
+  label: { it: string; en: string };
+}[] = [
+  { href: "/", label: { it: "Chi sono", en: "About Me" } },
+  { href: "/case-study", label: { it: "Case Study", en: "Case Study" } },
+  { href: "/contact", label: { it: "Contattami", en: "Contact" } },
 ];
+
+const langLabel = lang === 'it' ? 'English' : 'Italiano';
+const switchHref = lang === 'it' ? '/en' : '/';
 ---
 <header class="flex justify-between items-center py-4 px-6 border-b border-gray-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-  <!-- Logo o Nome -->
   <a href="/" class="text-xl font-semibold tracking-tight text-gray-800 hover:text-gray-900">
-    LOGO QUI
+    Mirko Donnarumma
   </a>
 
-  <!-- Navigazione -->
-  <nav class="flex gap-6">
+  <nav class="flex gap-6 items-center">
     {links.map(link => (
       <a
         href={link.href}
         class="text-gray-700 hover:text-gray-900 transition-colors duration-150"
       >
-        {link.label}
+        {link.label[lang]}
       </a>
     ))}
+
+    <a
+      href={switchHref}
+      class="ml-4 px-2 py-1 border rounded hover:bg-gray-100 transition-colors duration-150 text-sm"
+      aria-label={`Switch language to ${langLabel}`}
+    >
+      {langLabel}
+    </a>
   </nav>
 </header>
