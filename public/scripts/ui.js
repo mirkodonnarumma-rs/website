@@ -34,7 +34,7 @@ if (projectSection) {
         setTimeout(() => {
           projDetails.innerHTML = `
             <h4 class="font-semibold">Dettagli tecnici</h4>
-            <ul class="list-disc ml-5 mt-2">
+            <ul class="list-disc ml-5 py-4">
               <li>Firmware Rust su AM335x</li>
               <li>Comunicazione DALI tramite PLM bridge</li>
               <li>MQTT + DB per telemetria</li>

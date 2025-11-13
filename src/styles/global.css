@@ -11,6 +11,7 @@
   --accent: #7c3aed;
 }
 
+
 /* Base */
 html { scroll-behavior: smooth; }
 body {
@@ -111,3 +112,5 @@ a:focus, button:focus, .input:focus { box-shadow: 0 0 0 6px rgba(124,58,237,0.08
 @media (prefers-reduced-motion: reduce) {
   .reveal { transition: none !important; transform: none !important; }
 }
+
+

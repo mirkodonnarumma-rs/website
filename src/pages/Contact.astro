@@ -1,0 +1,30 @@
+---
+const { copy = {} } = Astro.props;
+const c = copy ?? {};
+---
+<section id="contact" class="snap-start flex items-start py-12">
+  <div class="container card reveal">
+    <h2 class="text-3xl font-bold">{c.title ?? 'Contact'}</h2>
+    <p class="py-2 text-muted">{c.subtitle ?? ''}</p>
+
+    <form name={c.formName ?? 'contact'} method="POST" data-netlify="true" class="">
+      <input type="hidden" name="form-name" value={c.formName ?? 'contact'} />
+      <label class="block">
+        <span>{c.name ?? 'Name'}</span>
+        <input name="name" required class="input" />
+      </label>
+
+      <label class="block">
+        <span>{c.email ?? 'Email'}</span>
+        <input name="email" type="email" required class="input" />
+      </label>
+
+      <label class="block">
+        <span>{c.message ?? 'Message'}</span>
+        <textarea name="message" rows="5" required class="input"></textarea>
+      </label>
+
+      <button type="submit" class="btn-primary">{c.send ?? 'Send'}</button>
+    </form>
+  </div>
+</section>

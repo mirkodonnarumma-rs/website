@@ -1,170 +1,36 @@
 ---
-import Header from '../../components/header.astro';
-import Footer from '../../components/footer.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import LatestProject from '../../components/LatestProject.astro';
 import '../../styles/global.css';
+import { copy } from '../../data/i18n.js';
 
 const lang = 'en';
+const c = copy[lang];
 ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Mirko Donnarumma — Portfolio</title>
-    <meta name="description" content="Portfolio di Mirko Donnarumma — Software Engineer Rust & Embedded." />
+    <title>{c.siteTitle}</title>
+    <meta name="description" content={c.metaDescription} />
     <link rel="alternate" href="https://mirkodonnarumma.it/" hreflang="it" />
     <link rel="alternate" href="https://mirkodonnarumma.it/en/" hreflang="en" />
     <link rel="canonical" href="https://mirkodonnarumma.it/en/" />
   </head>
 
-  <body class="font-sans text-gray-900 bg-white">
+  <body class="font-sans text-text bg-bg">
     <Header lang={lang} />
 
-    <!-- Main: container che applica scroll-snap su asse y -->
-    <main id="main" class="snap-y snap-mandatory scroll-smooth">
-      <!-- Landing -->
-      <section id="landing" class="snap-start min-h-screen flex items-center">
-        <div class="max-w-4xl mx-auto px-6 py-20">
-          <h1 class="text-4xl md:text-5xl font-extrabold">Ciao — sono Mirko</h1>
-          <p class="mt-4 text-lg text-gray-700">Software Engineer specializzato in Rust per sistemi embedded. Controllo DALI/PLM, integrazione hardware e automazione.</p>
-          <div class="mt-6 flex gap-4">
-            <a href="#contact" class="rounded bg-black text-white px-4 py-2">Contattami</a>
-            <a href="/public/cv/Mirko Donnarumma - ENG.pdf" class="rounded border px-4 py-2">Scarica CV</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="about" class="snap-start min-h-screen flex items-center bg-gray-50">
-        <div class="max-w-4xl mx-auto px-6 py-20">
-          <h2 class="text-3xl font-bold">Chi sono</h2>
-          <p class="mt-4 text-gray-700">Lavoro su progetti embedded usando Rust. Ho esperienza con Yocto, integrazione DALI e comunicazione PLM. Prediligo codice sicuro e performance deterministica.</p>
-
-          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="p-4 border rounded">
-              <h4 class="font-semibold">Competenze</h4>
-              <ul class="mt-2 list-disc ml-5 text-gray-700">
-                <li>Rust & Embedded</li>
-                <li>Yocto / Buildroot</li>
-                <li>DALI / PLM integrations</li>
-              </ul>
-            </div>
-
-            <div class="p-4 border rounded">
-              <h4 class="font-semibold">Strumenti</h4>
-              <p class="mt-2 text-gray-700">Git, CI, Debug su hardware, Serial/USB tools, Docker</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Latest project (lazy-load dettagli con IntersectionObserver) -->
-      <section id="project" class="snap-start min-h-screen flex items-center">
-        <div class="max-w-4xl mx-auto px-6 py-20">
-          <h2 class="text-3xl font-bold">Ultimo progetto</h2>
-          <p class="mt-2 text-gray-700">Descrizione sintetica del progetto principale — click per aprire i dettagli quando la sezione entra in vista.</p>
-
-          <div id="project-content" class="mt-6 reveal border rounded p-4">
-            <!-- contenuto leggero di placeholder; dettagli saranno caricati via JS (simulazione lazy) -->
-            <div class="project-summary">
-              <h3 class="font-semibold">Sistema di controllo illuminazione</h3>
-              <p class="mt-2 text-gray-700">Architettura embedded in Rust, integrazione DALI/PLM, invio telemetria su server centrale.</p>
-            </div>
-
-            <div id="project-details" class="mt-4 opacity-0 max-h-0 overflow-hidden transition-all duration-500">
-              <!-- placeholder: il dettaglio verrà espanso al primo ingresso nella viewport -->
-              <p class="text-gray-700">Caricamento dettagli...</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="snap-start min-h-screen flex items-center bg-gray-50">
-        <div class="max-w-4xl mx-auto px-6 py-20">
-          <h2 class="text-3xl font-bold">Contattami</h2>
-          <p class="mt-2 text-gray-700">Mandami un messaggio e ti rispondo al più presto.</p>
-
-          <!-- Netlify Forms (funziona anche con sito static) -->
-          <form name="contact" method="POST" data-netlify="true" class="mt-6 space-y-4">
-            <input type="hidden" name="form-name" value="contact" />
-            <label class="block">
-              <span>Nome</span>
-              <input name="name" required class="mt-1 w-full border rounded px-2 py-1" />
-            </label>
-
-            <label class="block">
-              <span>Email</span>
-              <input name="email" type="email" required class="mt-1 w-full border rounded px-2 py-1" />
-            </label>
-
-            <label class="block">
-              <span>Messaggio</span>
-              <textarea name="message" rows="6" required class="mt-1 w-full border rounded px-2 py-1"></textarea>
-            </label>
-
-            <button type="submit" class="px-4 py-2 rounded bg-black text-white">Invia</button>
-          </form>
-        </div>
-      </section>
-
-      <div class="py-12"></div> <!-- spacing bottom -->
+    <main id="main">
+      <Hero copy={c.hero} about={c.about} />
+      <LatestProject copy={c.latestProject} />
     </main>
 
     <Footer lang={lang} />
 
-    <!-- Client script: attivazione reveal, highlighting nav, lazy project details -->
-    <script type="module">
-      // highlight nav link based on visible section
-      const links = Array.from(document.querySelectorAll('.nav-link'));
-      const sections = Array.from(document.querySelectorAll('main section'));
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            // set active class
-            links.forEach(a => {
-              a.classList.toggle('font-semibold', a.getAttribute('data-section') === id);
-            });
-            // reveal animation
-            entry.target.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-            // lazy-load project details when project section enters
-            if (id === 'project') {
-              const details = document.getElementById('project-details');
-              if (details && details.classList.contains('lazy')) return;
-              // simulate fetch / heavy render
-              setTimeout(() => {
-                details.innerHTML = `
-                  <h4 class="font-semibold">Dettagli tecnici</h4>
-                  <ul class="list-disc ml-5 mt-2">
-                    <li>Firmware Rust su AM335x</li>
-                    <li>Comunicazione DALI tramite PLM bridge</li>
-                    <li>MQTT + DB per telemetria</li>
-                  </ul>
-                `;
-                details.style.maxHeight = '500px';
-                details.style.opacity = '1';
-                details.classList.add('lazy');
-              }, 400);
-            }
-          }
-        });
-      }, { root: null, rootMargin: '0px 0px -20% 0px', threshold: 0.45 });
-
-      sections.forEach(s => observer.observe(s));
-
-      // reveal elements initially (for elements already in view)
-      document.querySelectorAll('.reveal').forEach(el => {
-        // keeps elements hidden until intersection observer adds class
-        // initial state set via CSS
-      });
-
-      // enable keyboard anchor focus (accessibility)
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', (e) => {
-          // default smooth scroll handled by CSS scroll-behavior
-        });
-      });
-    </script>
+    <script type="module" src="/scripts/ui.js"></script>
   </body>
 </html>
