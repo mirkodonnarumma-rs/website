@@ -4,7 +4,7 @@ export const copy = {
     metaDescription: "Portfolio di Mirko Donnarumma — Software Engineer Rust & Embedded.",
     hero: {
       ctaContact: "Contattami",
-      ctaCv: "Scarica CV"
+      ctaCv: "CV"
     },
     about: {
       title: "Chi sono",
@@ -43,7 +43,7 @@ export const copy = {
     hero: {
       subtitle: "Every step, a new journey.",
       ctaContact: "Contact me",
-      ctaCv: "Download CV"
+      ctaCv: "CV"
     },
     about: {
       title: "About me",
