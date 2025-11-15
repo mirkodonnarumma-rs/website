@@ -1,24 +1,15 @@
 ---
-const { copy = {}, about = {} } = Astro.props;
-const aboutme = copy ?? {};
+const { about = {} } = Astro.props;
 ---
 
-<section id="aboutme" class="snap-start flex items-start py-12">
-  <div class="container">
-    <div class="md:col-span-7">
-      <pre class="ascii py-4" aria-hidden="true"></pre>
-      <ul class="py-4 list-disc ml-5 text-muted">
-        {(aboutme.bullets ?? []).map((item: unknown) => <li>{item}</li>)}
-      </ul>
+<section id="aboutme" class="snap-start py-12">
+  <div class="container grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    <div class="card reveal">
+      <h2 class="text-3xl font-bold mb-3">{about.title ?? "About"}</h2>
+      <p class="mb-4 text-muted">{about.text ?? ""}</p>
+      <p class="mb-4 text-muted">{about.text2 ?? ""}</p>
+      <p class="mb-4 text-muted">{about.text3 ?? ""}</p>
+      <p class="mb-4 text-muted">{about.text4 ?? ""}</p>
     </div>
-    <aside class="md:col-span-5">
-      <div class="card reveal">
-        <h2 class="text-2xl font-bold">{about.title ?? "About"}</h2>
-        <p class="py-4 text-muted">{about.text ?? ""}</p>
-        <p class="py-4 text-muted">{about.text2 ?? ""}</p>
-        <p class="py-4 text-muted">{about.text3 ?? ""}</p>
-        <p class="py-4 text-muted">{about.text4 ?? ""}</p>
-      </div>
-    </aside>
   </div>
 </section>

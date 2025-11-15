@@ -2,19 +2,15 @@
 const { copy = {} } = Astro.props;
 ---
 
-<section id="latest-project" class="snap-start flex items-start py-12">
-  <div class="container">
-    <div
-      id="project-content"
-      class="py-4 card reveal reveal border rounded p-4 bg-surface"
-    >
-      <h2 class="text-3xl font-bold">{copy.title ?? "Latest project"}</h2>
-      <p class="py-2 text-muted">{copy.subtitle ?? ""}</p>
+<section id="latest-project" class="snap-start py-12">
+  <div class="container grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    <div id="project-content" class="card reveal border rounded p-4 bg-surface">
+      <h2 class="text-3xl font-bold mb-2">{copy.title ?? "Latest project"}</h2>
+      <p class="mb-4 text-muted">{copy.subtitle ?? ""}</p>
       <div class="project-summary">
-        <h3 class="font-semibold">{copy.projectTitle ?? ""}</h3>
-        <p class="py-2 text-muted">{copy.summary ?? ""}</p>
-
-        <ul class="py-4 list-disc ml-5 text-muted">
+        <h3 class="font-semibold mb-2">{copy.projectTitle ?? ""}</h3>
+        <p class="mb-4 text-muted">{copy.summary ?? ""}</p>
+        <ul class="py-4 list-disc ml-6 space-y-2 text-muted">
           {(copy.bullets ?? []).map((s: unknown) => <li>{s}</li>)}
         </ul>
       </div>
