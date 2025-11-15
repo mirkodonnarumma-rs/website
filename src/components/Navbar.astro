@@ -1,0 +1,23 @@
+---
+import { copy } from "../data/i18n";
+import LangToggle from "./LangToggle.astro";
+const lang = "it";
+const c = copy[lang];
+---
+
+<div class="container">
+    <div class="card">
+        <div class="flex flex-row justify-around items-center gap-8 pt-8 pb-4">
+            <a
+                href="/cv/Mirko_Donnarumma_IT.pdf"
+                class="btn-primary"
+                target="_blank"
+                rel="noopener">{c.hero.ctaCv}</a
+            >
+
+            <a href="/Contact/" class="btn-primary">{c.hero.ctaContact}</a>
+
+            <LangToggle currentLang={lang} width={64} height={64} />
+        </div>
+    </div>
+</div>

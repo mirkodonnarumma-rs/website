@@ -1,10 +1,11 @@
 ---
-import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
 import Hero from "../../components/Hero.astro";
 import LatestProject from "../../components/LatestProject.astro";
 import "../../styles/global.css";
 import { copy } from "../../data/i18n.js";
+import Navbar from "../../components/Navbar.astro";
 
 const lang = "en";
 const c = copy[lang];
@@ -17,33 +18,13 @@ const c = copy[lang];
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{c.siteTitle}</title>
     <meta name="description" content={c.metaDescription} />
-    <link rel="alternate" href="https://mirkodonnarumma.it/" hreflang="it" />
-    <link rel="alternate" href="https://mirkodonnarumma.it/en/" hreflang="en" />
-    <link rel="canonical" href="https://mirkodonnarumma.it/" />
   </head>
 
   <body class="font-sans text-text bg-bg flex flex-col min-h-screen">
     <Header lang={lang} />
 
     <main id="main">
-      <div class="container">
-        <div
-          class="flex-1 flex flex-row md:flex-column justify-around items-center gap-8 pt-8 pb-4"
-        >
-        <!-- FIX BUTTON BORDER -> NONE -->
-          <button id="lang-switch" class="btn-primary">
-            {lang === "en" ? "IT" : "EN"}
-          </button>
-          <a
-            href="/cv/Mirko_Donnarumma_IT.pdf"
-            class="btn-primary"
-            target="_blank"
-            rel="noopener">{c.hero.ctaCv}</a
-          >
-
-          <a href="/Contact/" class="btn-primary">{c.hero.ctaContact}</a>
-        </div>
-      </div>
+      <Navbar></Navbar>
       <Hero copy={c.hero} about={c.about} />
       <LatestProject copy={c.latestProject} />
     </main>

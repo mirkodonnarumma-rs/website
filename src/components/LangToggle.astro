@@ -1,0 +1,48 @@
+---
+const { width = 32, height = 32, currentLang } = Astro.props;
+const serverLang = currentLang === "en" ? "en" : "it";
+const serverOppositeHref = serverLang === "en" ? "/" : "/en/";
+const serverTitle =
+  serverLang === "en" ? "Passa a Italiano" : "Switch to English";
+---
+
+<a
+  id="lang-toggle"
+  class="lang-toggle"
+  href={serverOppositeHref}
+  title={serverTitle}
+  aria-label={serverTitle}
+  style={`width:${width}px; height:${height}px;`}
+>
+  <img src="/images/language-icon.svg" alt="Language switch" />
+</a>
+
+<script type="module">
+  (() => {
+    const el = document.getElementById("lang-toggle");
+    if (!el) return;
+
+    if (!localStorage.getItem("lang")) {
+      localStorage.setItem("lang", "it");
+    }
+
+    const update = () => {
+      const stored = localStorage.getItem("lang") || "it";
+      el.href = stored === "it" ? "/en/" : "/";
+      el.title = stored === "it" ? "Switch to English" : "Passa a Italiano";
+      el.setAttribute("aria-label", el.title);
+    };
+
+    update();
+
+    el.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      const current = localStorage.getItem("lang") || "it";
+      const next = current === "it" ? "en" : "it";
+      localStorage.setItem("lang", next);
+
+      const target = next === "it" ? "/" : "/en/";
+      window.location.href = target;
+    });
+  })();
+</script>

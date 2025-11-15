@@ -1,20 +1,14 @@
----
-const { lang = "it", copy = {} } = Astro.props;
-const otherLang = lang === "it" ? "en" : "it";
-const baseTarget = otherLang === "en" ? "/en/" : "/";
----
-
 <header>
   <nav class="container justify-between">
     <pre
       class="ascii mb-4"
       aria-hidden="true">
-m    m   "           #
+m    m   "
 ##  ## mmm   m mm  #   m   mmm
 # ## #   #   #"  " # m"   #" "#
 # "" #   #   #     #"#    #   #
 #    # mm#mm #     #  "m  "#m#"
-</pre>
+    </pre>
     <pre
       class="ascii mb-4"
       aria-hidden="true">
@@ -23,19 +17,6 @@ mmmm
 #    # #" "#  #"  #  #"  #  "   #   #"  " #   #  # # #  # # #  "   #
 #    # #   #  #   #  #   #  m"""#   #     #   #  # # #  # # #  m"""#
 #mmm"  "#m#"  #   #  #   #  "mm"#   #     "mm"#  # # #  # # #  "mm"#
-</pre>
+    </pre>
   </nav>
-  <script>
-    (function () {
-      const btn = document.getElementById("lang-switch");
-      if (!btn) return;
-      btn.addEventListener("click", function () {
-        const hash = location.hash || "";
-        const target = "`${baseTarget}`"; // placeholder verrà rimpiazzato nel build
-        const other = location.pathname.startsWith("/en") ? "/" : "/en/";
-        const newUrl = other + hash;
-        location.href = newUrl;
-      });
-    })();
-  </script>
 </header>
