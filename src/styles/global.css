@@ -55,7 +55,7 @@
  .btn-primary:hover{
      opacity:.75;
 }
-/* Hero */
+/* AboutMe */
  @media(min-width:768px){
      .hero-title{
          font-size:3.5rem 

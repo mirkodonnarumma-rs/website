@@ -1,14 +1,14 @@
 ---
 const { copy = {}, about = {} } = Astro.props;
-const hero = copy ?? {};
+const aboutme = copy ?? {};
 ---
 
-<section id="hero" class="snap-start flex items-start py-12">
+<section id="aboutme" class="snap-start flex items-start py-12">
   <div class="container ">
     <div class="md:col-span-7 ">
       <pre class="ascii py-4" aria-hidden="true"></pre>
       <ul class="py-4 list-disc ml-5 text-muted ">
-        {(hero.bullets ?? []).map((item: unknown) => <li>{item}</li>)}
+        {(aboutme.bullets ?? []).map((item: unknown) => <li>{item}</li>)}
       </ul>
     </div>
     <aside class="md:col-span-5">

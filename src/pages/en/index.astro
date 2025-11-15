@@ -1,7 +1,7 @@
 ---
 import Footer from "../../components/Footer.astro";
 import Header from "../../components/Header.astro";
-import Hero from "../../components/Hero.astro";
+import AboutMe from "../../components/AboutMe.astro";
 import LatestProject from "../../components/LatestProject.astro";
 import "../../styles/global.css";
 import { copy } from "../../data/i18n.js";
@@ -25,7 +25,7 @@ const c = copy[lang];
 
     <main id="main">
       <Navbar></Navbar>
-      <Hero copy={c.hero} about={c.about} />
+      <AboutMe copy={c.hero} about={c.about} />
       <LatestProject copy={c.latestProject} />
     </main>
 
