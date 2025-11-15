@@ -6,33 +6,16 @@ const year = new Date().getFullYear();
 
 const texts: {
   copyright: { it: string; en: string };
-  downloadCV: { it: string; en: string };
-  email: { it: string; en: string };
-  github: { it: string; en: string };
 } = {
   copyright: {
     it: `© ${year} Mirko Donnarumma · Tutti i diritti riservati`,
     en: `© ${year} Mirko Donnarumma · All rights reserved`
   },
-  downloadCV: { it: 'Scarica CV', en: 'Download CV' },
-  email: { it: 'Email', en: 'Email' },
-  github: { it: 'GitHub', en: 'GitHub' }
 };
 ---
-<footer class="border-t border-gray-200 py-4 px-6 text-center text-sm text-gray-600 bg-gray-50">
-  <div class="flex flex-col justify-between items-center gap-2">
+<footer class="border-t border-gray-200 py-3 px-6 text-center text-sm text-gray-600 bg-gray-50 flex-shrink-0">
+  <div class="flex flex-col items-center gap-2">
     <p>{texts.copyright[lang]}</p>
-
-    <div class="flex gap-4 py-4">
-      <a href="/cv.pdf" class="hover:text-gray-900 underline transition-colors duration-150">
-        {texts.downloadCV[lang]}
-      </a>
-      <a href="mailto:mirko.donnarumma@outlook.it" class="hover:text-gray-900 underline transition-colors duration-150">
-        {texts.email[lang]}
-      </a>
-      <a href="https://github.com/<tuo-username>" target="_blank" rel="noopener" class="hover:text-gray-900 underline transition-colors duration-150">
-        {texts.github[lang]}
-      </a>
-    </div>
   </div>
 </footer>
+

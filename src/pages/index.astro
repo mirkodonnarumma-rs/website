@@ -1,14 +1,15 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Hero from '../components/Hero.astro';
-import LatestProject from '../components/LatestProject.astro';
-import '../styles/global.css';
-import { copy } from '../data/i18n.js';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import LatestProject from "../components/LatestProject.astro";
+import "../styles/global.css";
+import { copy } from "../data/i18n.js";
 
-const lang = 'it';
+const lang = "it";
 const c = copy[lang];
 ---
+
 <!doctype html>
 <html lang="it">
   <head>
@@ -21,10 +22,28 @@ const c = copy[lang];
     <link rel="canonical" href="https://mirkodonnarumma.it/" />
   </head>
 
-  <body class="font-sans text-text bg-bg">
+  <body class="font-sans text-text bg-bg flex flex-col min-h-screen">
     <Header lang={lang} />
 
     <main id="main">
+      <div class="container">
+        <div
+          class="flex-1 flex flex-row md:flex-column justify-around items-center gap-8 pt-8 pb-4"
+        >
+        <!-- FIX BUTTON BORDER -> NONE -->
+          <button id="lang-switch" class="btn-primary">
+            {lang === "it" ? "EN" : "IT"}
+          </button>
+          <a
+            href="/cv/Mirko_Donnarumma_IT.pdf"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener">{c.hero.ctaCv}</a
+          >
+
+          <a href="/Contact/" class="btn-primary">{c.hero.ctaContact}</a>
+        </div>
+      </div>
       <Hero copy={c.hero} about={c.about} />
       <LatestProject copy={c.latestProject} />
     </main>
