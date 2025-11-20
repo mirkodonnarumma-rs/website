@@ -75,6 +75,10 @@
      font-size: 16px;
      white-space: pre;
 }
+.icon-white {
+  filter: brightness(0) invert(1);
+}
+
   .lang-toggle {
     display: inline-flex;
     align-items: center;
