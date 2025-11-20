@@ -1,37 +1,89 @@
 ---
+import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 const { copy = {} } = Astro.props;
 const c = copy ?? {};
 ---
 
-<section id="contact" class="snap-start flex items-start py-12">
-  <div class="container card reveal">
-    <h2 class="text-3xl font-bold">{c.title ?? "Contact"}</h2>
-    <p class="py-2 text-muted">{c.subtitle ?? ""}</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mirko Donnarumma</title>
+  </head>
+  <body class="font-sans text-text bg-bg flex flex-col min-h-screen">
+    <Header />
+    <main>
+      <Navbar />
+      <section id="contact" class="">
+        <div class="container">
+          <div
+            class="card not-content rounded-3xl border border-gray-200 bg-gray-100 p-6 text-gray-900 md:p-10"
+          >
+            <h3 class="w-full text-center text-2xl font-medium">Contact Me</h3>
+            <form
+              id="contact-form"
+              name="contact form"
+              class="mt-4 flex flex-col gap-3"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <div>
+                <label for="contact-name" class="mb-1 text-gray-600">Name</label
+                >
+                <input
+                  type="text"
+                  class="form__input w-full box-border rounded-md p-2.5"
+                  name="name"
+                  id="contact-name"
+                  placeholder="Your preferred name"
+                  required
+                />
+              </div>
+              <div>
+                <label for="contact-email" class="mb-1 text-gray-600"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="form__input w-full box-border rounded-md p-2.5"
+                  name="email"
+                  id="contact-email"
+                  inputmode="email"
+                  placeholder="Your best contact email"
+                  required
+                />
+              </div>
+              <div>
+                <label for="contact-message" class="text-gray-600"
+                  >Message</label
+                >
+                <textarea
+                  name="message"
+                  class="form__input w-full box-border rounded-md p-2.5"
+                  id="contact-message"
+                  rows="4"
+                  placeholder="write your message here"
+                  required></textarea>
+              </div>
+              <button
+                type="submit"
+                class="focus-visible:ring-opacity-50 flex items-center justify-center gap-2 rounded-md bg-blue-600 p-2.5 text-white transition hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
 
-    <form
-      name={c.formName ?? "contact"}
-      method="POST"
-      data-netlify="true"
-      class=""
-    >
-      <input type="hidden" name="form-name" value={c.formName ?? "contact"} />
-      <label class="block">
-        <span>{c.name ?? "Name"}</span>
-        <input name="name" required class="input" />
-      </label>
+        <style>
+          @import "tailwindcss/theme" theme(reference);
 
-      <label class="block">
-        <span>{c.email ?? "Email"}</span>
-        <input name="email" type="email" required class="input" />
-      </label>
-
-      <label class="block">
-        <span>{c.message ?? "Message"}</span>
-        <textarea name="message" rows="5" required class="input"></textarea>
-      </label>
-
-      <button type="submit" class="btn-primary">{c.send ?? "Send"}</button>
-    </form>
-  </div>
-</section>
+          .form__input {
+            @apply w-full rounded-md border border-transparent bg-gray-200 p-2.5 transition outline-none;
+            @apply focus-visible:border-blue-600/70 focus-visible:ring-2 focus-visible:ring-blue-600/50;
+          }
+        </style>
+      </section>
+    </main>
+  </body>
+</html>
