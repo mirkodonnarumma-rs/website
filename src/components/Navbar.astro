@@ -1,25 +1,76 @@
 ---
 import { copy } from "../data/i18n";
-import LangToggle from "./LangToggle.astro";
-const lang = "it";
-const c = copy[lang];
+
+const urlLang = Astro.url.pathname.startsWith("/en/") ? "en" : "it";
+const c = copy[urlLang];
+
+const { width = 32, height = 32, currentLang } = Astro.props;
+const serverLang = urlLang;
+const serverOppositeHref = serverLang === "en" ? "/" : "/en/";
+const serverTitle =
+    serverLang === "en" ? "Passa a Italiano" : "Switch to English";
 ---
 
 <div class="container">
     <div class="navbar">
         <div class="flex flex-row justify-around items-center gap-8 pt-8 pb-4">
             <a
-                href="/cv/Mirko_Donnarumma_IT.pdf"
+                href={`/cv/Mirko_Donnarumma_${urlLang.toUpperCase()}.pdf`}
                 class="btn-primary"
                 target="_blank"
                 rel="noopener">{c.hero.ctaCv}</a
             >
-            
-            <a href="https://www.linkedin.com/in/mirko-donnarumma/" class="btn-primary">LinkedIn</a>
+
+            <a
+                href="https://www.linkedin.com/in/mirko-donnarumma/"
+                class="btn-primary"
+            >
+                {c.hero.linkedIn}
+            </a>
 
             <a href="/Contact/" class="btn-primary">{c.hero.ctaContact}</a>
 
-            <LangToggle currentLang={lang} width={64} height={64} />
+            <a
+                id="lang-toggle"
+                class="lang-toggle btn-primary"
+                href={serverOppositeHref}
+                title={serverTitle}
+                aria-label={serverTitle}
+                style={`width:${width}px; height:${height}px;`}
+            >
+                <img src="/images/language-icon.svg" alt="Language switch" />
+            </a>
         </div>
     </div>
 </div>
+
+<script type="module">
+    (() => {
+        const el = document.getElementById("lang-toggle");
+        if (!el) return;
+
+        if (!localStorage.getItem("lang")) {
+            localStorage.setItem("lang", "it");
+        }
+
+        const update = () => {
+            const stored = localStorage.getItem("lang") || "it";
+            el.href = stored === "it" ? "/en/" : "/";
+            el.title =
+                stored === "it" ? "Switch to English" : "Passa a Italiano";
+            el.setAttribute("aria-label", el.title);
+        };
+
+        update();
+
+        el.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            const current = localStorage.getItem("lang") || "it";
+            const next = current === "it" ? "en" : "it";
+            localStorage.setItem("lang", next);
+
+            const target = next === "it" ? "/" : "/en/";
+            window.location.href = target;
+        });
+    })();
+</script>

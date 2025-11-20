@@ -1,32 +1,42 @@
 export const copy = {
   it: {
     siteTitle: "Mirko Donnarumma",
-    metaDescription: "Portfolio di Mirko Donnarumma — Software Engineer Rust & Embedded.",
+    metaDescription: "Portfolio di Mirko Donnarumma — Software Engineer Rust.",
     hero: {
       ctaContact: "Contattami",
-      ctaCv: "CV"
+      ctaCv: "CV",
+      linkedIn: "LinkedIn",
     },
     about: {
       title: "Chi sono",
-      text: "Ciao, sono Mirko e sono un Rustacean! Ho esperienza in ambito embedded, integrazione DALI/MODBUS, programmazione async/await e RDBMS.",
-      text2: "Grazie ai principi di Rust adotto uno sviluppo rigoroso: borrowing sicuro, API controllate, modelli dati chiari, pattern matching preciso e trait che definiscono comportamenti affidabili, ottenendo codice solido e prevedibile.",
-      text3: "Tutto ciò con un obbiettivo in mente: creare soluzioni affidabili, performanti, deterministiche, sicure ed ottimizzate!",
-      text4: "Alcune delle skills che ho sviluppato lavorando con Rust:",
-      skills: ["Rust & Embedded", "Yocto / Buildroot", "DALI / PLM integrations", "FSM"]
+      text: "Ciao! Mi chiamo Mirko e sono un Rustacean!",
+      text2: "I Rustacean sono creature particolari. Proprio come lo strumento che utilizzano, sono affidabili, performanti, produttivi, trasparenti e versatili.",
+      text3: "Abbracciando questa filosofia, ho intrapreso il mio percorso in Rust da un anno a questa parte, con l'obbiettivo di migliorare come sviluppatore e come persona.",
+      text4: "Credo fermamente in uno dei principi che voglio condividere con te:",
+      text5: "Finding the perfect design requires iteration. Think big but start small; don't be afraid to change course as you learn more.",
     },
-    latestProject: {
-      title: "NovaSphere",
-      subtitle: "Descrizione sintetica — i dettagli vengono caricati quando la sezione entra in vista.",
-      projectTitle: "Sistema di controllo illuminazione",
-      summary: "Architettura embedded in Rust, integrazione DALI/PLM, invio telemetria su server centrale.",
+    skills: {
+      title: "Competenze",
       bullets: [
-        "Multiplexer per comunicazione tra dispositivi embedded",
-        "Firmware Rust per AM335x",
-        "Integrazione DALI2 e protocollo MODBUS",
-        "MQTT",
-        "Database SQLx ottimizzato (PRAGMA + Command Pattern ORM-like)"
+        "Multiplexer per comunicazione async/await concorrenziale ",
+        "Protocollo MODBUS e DALI2",
+        "Strategy Pattern attraverso traits",
+        "SQLite w/ SQLx (PRAGMA + Command Pattern ORM-like)",
+        "Rust for Embedded",
+        "Yocto",
+        "DALI",
+        "FSM"
       ]
     },
+    latestProject: {
+      title: "Ultimo progetto",
+      part0: "Come ingegnere del software ho curato le scelte architetturali e sviluppato documentazione e codice dell’intero ecosistema.",
+      part1: "Ho creato una piattaforma che automatizza e monitora l’illuminazione in ambienti industriali.",
+      part2: "Gestisce luci, sensori e contatori, raccogliendo dati in locale e sul cloud per analisi e segnalazioni rapide.",
+      part3: "Supporta fino a 3.072 nodi e consente controlli singoli o di gruppo, con scenari automatici basati su orari o sensori.",
+      part4: "L’architettura a più livelli garantisce stabilità, integrazione semplice nelle reti esistenti e sicurezza tramite connessioni criptate."
+    },
+
     contact: {
       title: "Contattami",
       subtitle: "Mandami un messaggio e ti rispondo al più presto.",
@@ -39,32 +49,40 @@ export const copy = {
   },
   en: {
     siteTitle: "Mirko Donnarumma",
-    metaDescription: "Portfolio of Mirko Donnarumma — Rust & Embedded Software Engineer.",
+    metaDescription: "Portfolio of Mirko Donnarumma — Rust Software Engineer.",
     hero: {
-      subtitle: "Every step, a new journey.",
       ctaContact: "Contact me",
-      ctaCv: "CV"
+      ctaCv: "CV",
+      linkedIn: "LinkedIn",
     },
     about: {
       title: "About me",
-      text: "Hi, I'm Mirko and I'm a Rustacean! I have experience in embedded systems, DALI/MODBUS integration, async/await programming and RDBMS.",
-      text2: "Thanks to Rust’s principles I follow a rigorous development approach: safe borrowing, controlled APIs, clear data models, precise pattern matching, and traits that define reliable behaviors, producing solid and predictable code.",
-      text3: "All with a single goal in mind: building reliable, performant, deterministic, safe and optimized solutions!",
-      text4: "Some of the skills I have developed working with Rust:",
-      skills: ["Rust & Embedded", "Yocto / Buildroot", "DALI / PLM integrations", "FSM"]
+      text: "Hi! My name is Mirko and I'm a Rustacean!",
+      text2: "Rustaceans are peculiar creatures. Just like the tool they use, they are reliable, performant, productive, transparent, and versatile.",
+      text3: "Embracing this philosophy, I started my journey with Rust a year ago, with the goal of improving both as a developer and as a person.",
+      text4: "I strongly believe in one of the principles I want to share with you:",
+      text5: "Finding the perfect design requires iteration. Think big but start small; don’t be afraid to change course as you learn more.",
+    },
+    skills: {
+      title: "Skills",
+      bullets: [
+        "Multiplexer for async/await concurrent communication",
+        "MODBUS and DALI2 protocol",
+        "Strategy Pattern via traits",
+        "SQLite w/ SQLx (PRAGMA + ORM-like Command Pattern)",
+        "Rust for Embedded",
+        "Yocto",
+        "DALI",
+        "FSM"
+      ]
     },
     latestProject: {
-      title: "NovaSphere",
-      subtitle: "Short description — details are loaded when the section enters the viewport.",
-      projectTitle: "Lighting control system",
-      summary: "Embedded architecture in Rust, DALI/PLM integration, telemetry sent to central server.",
-      bullets: [
-        "Multiplexer for communication between embedded devices",
-        "Rust firmware for AM335x",
-        "DALI2 and MODBUS protocol integration",
-        "MQTT",
-        "Optimized SQLx database (PRAGMA + ORM-like Command Pattern)"
-      ]
+      title: "Latest project",
+      part0: "As a software engineer, I oversaw architectural decisions and developed the documentation and code for the entire ecosystem.",
+      part1: "I built a platform that automates and monitors lighting in industrial environments.",
+      part2: "It manages lights, sensors, and meters, collecting data locally and in the cloud for quick analysis and reporting.",
+      part3: "It supports up to 3,072 nodes and enables individual or group controls, with automated scenarios based on schedules or sensors.",
+      part4: "The multi-layer architecture ensures stability, easy integration into existing networks, and security through encrypted connections."
     },
     contact: {
       title: "Contact me",
@@ -76,4 +94,5 @@ export const copy = {
       send: "Send"
     }
   }
+
 };

@@ -1,16 +1,18 @@
 ---
 const { copy = {} } = Astro.props;
+const bullets = copy.bullets || [];
 ---
 
 <section id="aboutme" class="snap-start py-12">
   <div class="container grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
     <div class="card reveal">
       <h2 class="text-3xl font-bold mb-3">{copy.title ?? "About"}</h2>
-      <p class="mb-4 text-muted">{copy.part0 ?? ""}</p>
-      <p class="mb-4 text-muted">{copy.part1 ?? ""}</p>
-      <p class="mb-4 text-muted">{copy.part2 ?? ""}</p>
-      <p class="mb-4 text-muted">{copy.part3 ?? ""}</p>
-      <p class="mb-4 text-muted">{copy.part4 ?? ""}</p>
+
+      <ul class="mb-4 text-muted columns-2 gap-8 [column-fill:balance]">
+        {bullets.map((item: unknown) => (
+          <li class="break-inside-avoid mb-2">{item}</li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>

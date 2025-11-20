@@ -6,6 +6,7 @@ import LatestProject from "../components/LatestProject.astro";
 import "../styles/global.css";
 import { copy } from "../data/i18n.js";
 import Navbar from "../components/Navbar.astro";
+import Skills from "../components/Skills.astro";
 
 const lang = "it";
 const c = copy[lang];
@@ -26,6 +27,7 @@ const c = copy[lang];
     <main id="main">
       <Navbar />
       <AboutMe copy={c.hero} about={c.about} />
+      <Skills copy={c.skills}/>
       <LatestProject copy={c.latestProject} />
     </main>
 
