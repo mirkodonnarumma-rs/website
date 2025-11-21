@@ -14,35 +14,55 @@ const serverTitle =
 <div class="container">
     <div class="navbar">
         <div class="flex flex-row justify-around items-center gap-8 pt-8 pb-4">
-            <a href="/">
-                <img src="/images/home.svg" alt="Home" width="28" height="28" class="icon-white"/>
+            <a href="/" title={c.hero.home}>
+                <img
+                    src="/images/home.svg"
+                    alt="Home"
+                    style={`width:${width}px; height:${height}px;`}
+                    class="icon-white"
+                />
             </a>
 
             <a
                 href={`/cv/Mirko_Donnarumma_${urlLang.toUpperCase()}.pdf`}
-                class="btn-primary"
-                target="_blank"
-                rel="noopener">{c.hero.ctaCv}</a
+                title={c.hero.cv}
             >
+                <img
+                    src="/images/cv.svg"
+                    alt="Curriculum Vitae"
+                    style={`width:${width}px; height:${height}px;`}
+                    class="icon-white"
+                />
+            </a>
 
             <a
                 href="https://www.linkedin.com/in/mirko-donnarumma/"
-                class="btn-primary"
+                title={c.hero.linkedIn}
             >
-                {c.hero.linkedIn}
+                <img
+                    src="/images/linkedin.svg"
+                    alt="LinkedIn"
+                    style={`width:${width}px; height:${height}px;`}
+                    class="icon-white"
+                />
             </a>
 
-            <a href="/Contact/" class="btn-primary">{c.hero.ctaContact}</a>
+            <a href="/Contact/" title={c.hero.contact}>
+                <img
+                    src="/images/email.svg"
+                    style={`width:${width}px; height:${height}px;`}
+                    class="icon-white"
+                />
+            </a>
 
             <a
                 id="lang-toggle"
                 class="lang-toggle btn-primary"
                 href={serverOppositeHref}
                 title={serverTitle}
-                aria-label={serverTitle}
                 style={`width:${width}px; height:${height}px;`}
             >
-                <img src="/images/language-icon.svg" alt="Language switch" />
+                <img src="/images/language-icon.svg" />
             </a>
         </div>
     </div>

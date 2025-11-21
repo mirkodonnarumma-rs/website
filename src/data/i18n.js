@@ -3,9 +3,10 @@ export const copy = {
     siteTitle: "Mirko Donnarumma",
     metaDescription: "Portfolio di Mirko Donnarumma — Software Engineer Rust.",
     hero: {
-      ctaContact: "Contattami",
-      ctaCv: "CV",
+      home: "Home",
+      contact: "Contattami",
       linkedIn: "LinkedIn",
+      cv: "Scarica CV",
     },
     about: {
       title: "Chi sono",
@@ -51,9 +52,10 @@ export const copy = {
     siteTitle: "Mirko Donnarumma",
     metaDescription: "Portfolio of Mirko Donnarumma — Rust Software Engineer.",
     hero: {
-      ctaContact: "Contact me",
-      ctaCv: "CV",
+      home: "Home",
+      contact: "Contact me",
       linkedIn: "LinkedIn",
+      cv: "Download CV",
     },
     about: {
       title: "About me",
