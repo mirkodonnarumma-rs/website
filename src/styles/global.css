@@ -14,7 +14,7 @@
 /* Base */
 html, body {
     height: 100%;
-    /* blocca lo scroll di pagina — usare con cautela */
+    overflow: hidden;
 }
 
 body {
