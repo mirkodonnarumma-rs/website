@@ -6,13 +6,114 @@ const bullets = copy.bullets || [];
 <section id="aboutme" class="snap-start py-12">
   <div class="container grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
     <div class="card reveal">
-      <h2 class="text-3xl font-bold mb-3">{copy.title ?? "About"}</h2>
+      <div class="about-subsection">
+        <h3 class="">Skills</h3>
+        <!-- Griglia Tecnologie -->
+        <div class="tech-grid">
+          <!-- Linguaggi -->
+          <div class="tech-item">
+            <i class="devicon-rust-original tech-icon-devicon"></i>
+            <span>Rust</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-llvm-plain colored tech-icon-devicon"></i>
+            <span>LLVM</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-python-plain colored tech-icon-devicon"></i>
+            <span>Python</span>
+          </div>
+          <!-- Framework e Librerie -->
 
-      <ul class="mb-4 text-muted columns-2 gap-8 [column-fill:balance]">
-        {bullets.map((item: unknown) => (
-          <li class="break-inside-avoid mb-2">{item}</li>
-        ))}
-      </ul>
+          <!-- Database -->
+          <div class="tech-item">
+            <i class="devicon-mysql-plain colored tech-icon-devicon"></i>
+            <span>MySQL</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-sqlite-plain colored tech-icon-devicon"></i>
+            <span>SQLite</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-mariadb-original colored tech-icon-devicon"></i>
+            <span>MariaDB</span>
+          </div>
+
+          <!-- Tools -->
+          <div class="tech-item">
+            <i class="devicon-postman-plain colored tech-icon-devicon"></i>
+            <span>Postman</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-git-plain colored tech-icon-devicon"></i>
+            <span>Git</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-gitlab-plain colored tech-icon-devicon"></i>
+            <span>GitLab</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-github-original tech-icon-devicon"></i>
+            <span>GitHub</span>
+          </div>
+          <div class="tech-item">
+            <i
+              class="devicon-unifiedmodelinglanguage-plain colored tech-icon-devicon"
+            ></i>
+            <span>UML</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-bash-plain tech-icon-devicon"></i>
+            <span>Bash</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-ssh-original tech-icon-devicon"></i>
+            <span>SSH</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-vscode-plain colored tech-icon-devicon"></i>
+            <span>VSCode</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-markdown-original tech-icon-devicon"></i>
+            <span>Markdown</span>
+          </div>
+
+          <!-- Sistemi Operativi -->
+          <div class="tech-item">
+            <i class="devicon-linux-plain tech-icon-devicon"></i>
+            <span>GNU/Linux</span>
+          </div>
+          <div class="tech-item">
+            <i class="devicon-debian-plain colored tech-icon-devicon"></i>
+            <span>Debian Trixie</span>
+          </div>
+
+          <!-- Embedded & Hardware -->
+          <div class="tech-item">
+            <i class="devicon-arduino-plain colored tech-icon-devicon"></i>
+            <span>Arduino</span>
+          </div>
+          <div class="tech-item">
+            <i
+              class="fa-solid fa-microchip tech-icon-fallback"
+              style="color: #03234B;"></i>
+            <span>STM32</span>
+          </div>
+          <div class="tech-item">
+            <i
+              class="fa-solid fa-network-wired tech-icon-fallback"
+              style="color: #FF6B6B;"></i>
+            <span>RS485</span>
+          </div>
+          <div class="tech-item">
+            <i
+              class="fa-solid fa-lightbulb tech-icon-fallback"
+              style="color: #FFC107;"></i>
+            <span>DALI/DALI-2</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
