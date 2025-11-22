@@ -8,167 +8,130 @@ const c = copy[lang];
 ---
 
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mirko Donnarumma</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate icon" type="image/png" href="/favicon.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,100,300"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mirko Donnarumma</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" type="image/png" href="/favicon.png" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Lato:400,100,300"
+            rel="stylesheet"
+            type="text/css"
+        />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:100,400,700"
-      rel="stylesheet"
-    />
+        <link
+            href="https://fonts.googleapis.com/css?family=Raleway:100,400,700"
+            rel="stylesheet"
+        />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Oswald:200,400,700"
-      rel="stylesheet"
-    />
+        <link
+            href="https://fonts.googleapis.com/css?family=Oswald:200,400,700"
+            rel="stylesheet"
+        />
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-    />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+        />
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-    />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+        />
 
-    <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div class="navbar">
-      <div class="flex flex-row justify-around items-center gap-8 pt-8 pb-4">
-        <a href="/" title={c.hero.home}>
-          <img
-            src="/images/home.svg"
-            alt="Home"
-            style={`width:64px; height:64}px;`}
-            class="icon-white"
-          />
-        </a>
-      </div>
-    </div>
-    <section id="contact">
-      <h1 class="section-header">Get in touch</h1>
-
-      <div class="contact-wrapper">
-        <form id="contact-form" class="form-horizontal" role="form">
-          <div class="form-group">
-            <div class="col-sm-12">
-              <input
-                type="text"
-                class="form-control"
-                id="name"
-                placeholder="NAME"
-                name="name"
-                value=""
-                required
-              />
+        <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <div class="navbar">
+            <div
+                class="flex flex-row justify-around items-center gap-8 pt-8 pb-4"
+            >
+                <a href="/" title={c.hero.home}>
+                    <img
+                        src="/images/home.svg"
+                        alt="Home"
+                        style={`width:64px; height:64}px;`}
+                        class="icon-white"
+                    />
+                </a>
             </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-12">
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="EMAIL"
-                name="email"
-                value=""
-                required
-              />
-            </div>
-          </div>
-
-          <textarea
-            class="form-control"
-            rows="10"
-            placeholder="MESSAGE"
-            name="message"
-            required></textarea>
-
-          <button
-            class="btn btn-primary send-button"
-            id="submit"
-            type="submit"
-            value="SEND"
-          >
-            <div class="alt-send-button">
-              <i class="fa fa-paper-plane"></i><span class="send-text"
-                >SEND</span
-              >
-            </div>
-          </button>
-        </form>
-
-        <div class="direct-contact-container">
-          <ul class="contact-list">
-            <li class="list-item">
-              <i class="fa fa-map-marker fa-2x"
-                ><span class="contact-text place">Milan, Italy</span></i
-              >
-            </li>
-
-            <li class="list-item">
-              <i class="fa fa-phone fa-2x"
-                ><span class="contact-text phone"
-                  ><a href="tel:+39 3791574616" title="Give me a call"
-                    >+39 3791574616</a
-                  ></span
-                ></i
-              >
-            </li>
-
-            <li class="list-item">
-              <i class="fa fa-envelope fa-2x"
-                ><span class="contact-text gmail"
-                  ><a
-                    href="mailto:mirko.donnarumma@outlook.it"
-                    title="Send me an email">mirko@outlook.it</a
-                  ></span
-                ></i
-              >
-            </li>
-          </ul>
-
-          <hr />
-          <ul class="social-media-list">
-            <li>
-              <a
-                href="https://github.com/mirkodonnarumma1995"
-                class="contact-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub — Mirko Donnarumma"
-              >
-                <i class="fa fa-github" aria-hidden="true"></i>
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://www.linkedin.com/in/mirko-donnarumma/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-icon"
-              >
-                <i class="fa fa-linkedin" aria-hidden="true"></i></a
-              >
-            </li>
-          </ul>
-          <hr />
-
-          <div class="copyright">© ALL RIGHTS RESERVED</div>
         </div>
-      </div>
-    </section>
-  </body>
+        <section id="contact">
+            <h1 class="section-header">Get in touch</h1>
+
+            <div class="container">
+                <ul class="contact-list">
+                    <li class="list-item">
+                        <i class="fa fa-map-marker fa-2x"
+                            ><span class="contact-text place">Milan, Italy</span
+                            ></i
+                        >
+                    </li>
+
+                    <li class="list-item">
+                        <i class="fa fa-phone fa-2x"
+                            ><span class="contact-text phone"
+                                ><a
+                                    href="tel:+39 3791574616"
+                                    title="Give me a call">+39 3791574616</a
+                                ></span
+                            ></i
+                        >
+                    </li>
+
+                    <li class="list-item">
+                        <i class="fa fa-envelope fa-2x"
+                            ><span class="contact-text gmail"
+                                ><a
+                                    href="mailto:mirko.donnarumma@outlook.it"
+                                    title="Send me an email">mirko@outlook.it</a
+                                ></span
+                            ></i
+                        >
+                    </li>
+                </ul>
+
+                <hr />
+                <ul class="social-media-list">
+                    <li>
+                        <a
+                            href="https://github.com/mirkodonnarumma1995"
+                            class="contact-icon"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub — Mirko Donnarumma"
+                        >
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/mirko-donnarumma/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-icon"
+                        >
+                            <i class="fa fa-linkedin" aria-hidden="true"></i></a
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://wa.me/+393791574616"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-icon"
+                        >
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i></a
+                        >
+                    </li>
+                </ul>
+                <hr />
+
+                <div class="copyright">© ALL RIGHTS RESERVED</div>
+            </div>
+        </section>
+    </body>
 </html>
