@@ -10,6 +10,13 @@ import { copy } from "../data/i18n";
 
 const lang = "it";
 const c = copy[lang];
+
+const meta = {
+    title: "Mirko Donnarumma — Software engineer Rust | Embedded Rust developer",
+    description:
+        "Mirko Donnarumma — Software engineer specializzato in Rust ed embedded.",
+    url: "https://mirkodonnarumma.it",
+};
 ---
 
 <!doctype html>
@@ -17,8 +24,37 @@ const c = copy[lang];
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>{c.siteTitle}</title>
-        <meta name="description" content={c.metaDescription} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta
+            name="keywords"
+            content="Software engineer Rust, Embedded Rust developer, Rust developer"
+        />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:url" content={meta.url} />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Mirko Donnarumma",
+                "jobTitle": "Software Engineer (Rust)",
+                "url": "https://mirkodonnarumma.it",
+                "sameAs": [
+                    "https://github.com/mirkodonnarumma1995",
+                    "https://www.linkedin.com/in/mirko-donnarumma/"
+                ]
+            }
+        </script>
 
         <link
             rel="stylesheet"
@@ -29,7 +65,6 @@ const c = copy[lang];
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" type="image/png" href="/favicon.png" />
 
-        <!-- DevIcons per le tecnologie -->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
